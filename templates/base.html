@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>{% block title %}Matt Ferguson{% endblock %}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <noscript><link rel="stylesheet" href="{% static 'css/noscript.css' %}" /></noscript>
+</head>
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper"{% if current_page == 'projects' %} class="fade-in"{% endif %}>
+
+        {% if current_page == 'projects' %}
+        <!-- Intro -->
+        <div id="intro">
+            <h1>Matt <br /> Ferguson</h1>
+            <p>Senior Software Engineer</p>
+            <p>
+                <a href="https://github.com/mfergus93">My Projects on Github</a> <br />
+                <a href="{% static 'pdf/resume.pdf' %}" download="resume.pdf">Download Resume</a>
+            </p>
+            <ul class="actions">
+                <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+            </ul>
+        </div>
+        {% endif %}
+
+        <!-- Header -->
+        <header id="header">
+            <a href="{% url 'portfolio:index' %}" class="logo">MattFerg.com</a>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li{% if current_page == 'projects' %} class="active"{% endif %}>
+                    <a href="{% url 'portfolio:index' %}">Projects</a>
+                </li>
+                <li{% if current_page == 'resume' %} class="active"{% endif %}>
+                    <a href="{% url 'portfolio:resume' %}">Resume</a>
+                </li>
+                <li{% if current_page == 'about' %} class="active"{% endif %}>
+                    <a href="{% url 'portfolio:about' %}">Who I Am</a>
+                </li>
+            </ul>
+            <ul class="icons">
+                <!-- Social icons can be uncommented and updated with real links -->
+                <!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li> -->
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        {% block footer %}
+        <!-- Footer can be added here if needed -->
+        {% endblock %}
+
+        <!-- Copyright -->
+        <div id="copyright">
+            <ul><li>&copy; Ferguson</li><li>Design: <a href="mattferg.com">mattferg.com</a></li></ul>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery.scrollex.min.js' %}"></script>
+    <script src="{% static 'js/jquery.scrolly.min.js' %}"></script>
+    <script src="{% static 'js/browser.min.js' %}"></script>
+    <script src="{% static 'js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'js/util.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

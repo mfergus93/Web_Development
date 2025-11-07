@@ -1,0 +1,34 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Django stuff
+*.log
+*.pot
+*.pyc
+db.sqlite3
+media/
+
+# PyCharm / VSCode / Spyder
+.idea/
+.vscode/
+.spyproject/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Migrations (optional: you might want to track them)
+*/migrations/__pycache__/
+*/migrations/*.pyc
