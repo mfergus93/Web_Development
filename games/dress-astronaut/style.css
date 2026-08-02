@@ -29,6 +29,10 @@
 	margin: 0 auto;
 }
 
+@media (max-width: 820px) {
+	#gamemenu > ul { max-width: 570px; margin-inline: auto; }
+}
+
 @media (prefers-reduced-motion: reduce) {
 	* { scroll-behavior: auto !important; }
 }

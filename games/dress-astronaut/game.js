@@ -1,11 +1,12 @@
 "use strict";
 
 const NS = "http://www.w3.org/2000/svg";
-const defaults = { background: "moon", helmet: "classic", suit: "white", feet: "boots", accessory1: "none", accessory2: "none" };
+const defaults = { background: "moon", helmet: "classic", faceAccessory: "none", suit: "white", feet: "boots", accessory1: "none", accessory2: "none" };
 const suitColors = { white: "#f4f4f0", orange: "#ee8739", pink: "#ef9fba", blue: "#72a8d4", overalls: "#f4f4f0", tuxedo: "#222", plaid: "#682938" };
 const labels = {
 	backgrounds: { moon: "the Moon", mars: "Mars", station: "a space station", castle: "a castle", beach: "a beach", cornfield: "a cornfield" },
-	helmets: { classic: "classic helmet", bubble: "bubble helmet", cowboy: "cowboy helmet", dunce: "Love Island dunce cap", fish: "Fish Magnet hat", hardhat: "hardhat", glasses: "round glasses", bow: "bow" },
+	helmets: { classic: "classic helmet", bubble: "bubble helmet", cowboy: "cowboy helmet", dunce: "Love Island dunce cap", fish: "Fish Magnet hat", hardhat: "hardhat", bow: "bow" },
+	faceAccessories: { none: "no face accessory", mustache: "handlebar mustache", googly: "googly eyes", clown: "clown nose", eyepatch: "eye patch", monocle: "monocle", glasses: "glasses" },
 	suits: { white: "white suit", orange: "orange suit", pink: "pink suit", blue: "blue suit", overalls: "farmer's overalls", tuxedo: "tuxedo", plaid: "burgundy plaid shirt" },
 	feet: { boots: "moon boots", flippers: "flippers", toes: "two giant toes", timbs: "Timbs", jordans: "Jordans", heels: "high heels" },
 	accessories: {
@@ -22,6 +23,7 @@ const astronaut = document.querySelector("#astronaut");
 const backgroundLayer = document.querySelector("#background-layer");
 const suitLayer = document.querySelector("#suit-layer");
 const helmetLayer = document.querySelector("#helmet-layer");
+const faceAccessoryLayer = document.querySelector("#face-accessory-layer");
 const feetLayer = document.querySelector("#feet-layer");
 const behindLayer = document.querySelector("#accessory-behind");
 const frontLayer = document.querySelector("#accessory-front");
@@ -157,13 +159,32 @@ function drawHelmet() {
 	} else if (state.helmet === "hardhat") {
 		add(helmetLayer, "path", { d: "M161 82 Q166 34 210 29 Q254 34 259 82Z", fill: "#f2c230", stroke: "#333", "stroke-width": 4, "stroke-linejoin": "round" });
 		add(helmetLayer, "path", { d: "M210 31 V76 M151 82 H269", fill: "none", stroke: "#333", "stroke-width": 7, "stroke-linecap": "round" });
-	} else if (state.helmet === "glasses") {
-		add(helmetLayer, "circle", { cx: 188, cy: 137, r: 20, fill: "none", stroke: "#222", "stroke-width": 4 });
-		add(helmetLayer, "circle", { cx: 232, cy: 137, r: 20, fill: "none", stroke: "#222", "stroke-width": 4 });
-		add(helmetLayer, "path", { d: "M208 136 Q210 132 212 136 M168 134 L157 130 M252 134 L263 130", fill: "none", stroke: "#222", "stroke-width": 4, "stroke-linecap": "round" });
 	} else if (state.helmet === "bow") {
 		add(helmetLayer, "path", { d: "M207 73 Q170 43 163 68 Q162 89 207 79Z M213 73 Q250 43 257 68 Q258 89 213 79Z", fill: "#e76b91", stroke: "#333", "stroke-width": 4, "stroke-linejoin": "round" });
 		add(helmetLayer, "circle", { cx: 210, cy: 76, r: 12, fill: "#f08aaa", stroke: "#333", "stroke-width": 4 });
+	}
+}
+
+function drawFaceAccessory() {
+	if (state.faceAccessory === "mustache") {
+		add(faceAccessoryLayer, "path", { d: "M210 151 C197 143 183 145 178 156 C187 155 194 162 210 157 C226 162 233 155 242 156 C237 145 223 143 210 151Z", fill: "#55351f", stroke: "#2d2118", "stroke-width": 2, "stroke-linejoin": "round" });
+	} else if (state.faceAccessory === "googly") {
+		add(faceAccessoryLayer, "circle", { cx: 191, cy: 137, r: 13, fill: "#fff", stroke: "#222", "stroke-width": 2 });
+		add(faceAccessoryLayer, "circle", { cx: 229, cy: 137, r: 13, fill: "#fff", stroke: "#222", "stroke-width": 2 });
+		add(faceAccessoryLayer, "circle", { cx: 195, cy: 141, r: 6, fill: "#222" });
+		add(faceAccessoryLayer, "circle", { cx: 225, cy: 132, r: 6, fill: "#222" });
+	} else if (state.faceAccessory === "clown") {
+		add(faceAccessoryLayer, "circle", { cx: 210, cy: 149, r: 11, fill: "#df3e48", stroke: "#8d2028", "stroke-width": 2 });
+	} else if (state.faceAccessory === "eyepatch") {
+		add(faceAccessoryLayer, "path", { d: "M158 119 Q210 101 262 119", fill: "none", stroke: "#222", "stroke-width": 4 });
+		add(faceAccessoryLayer, "path", { d: "M211 128 Q226 119 241 128 L237 148 Q225 157 213 148Z", fill: "#222", stroke: "#111", "stroke-width": 2 });
+	} else if (state.faceAccessory === "monocle") {
+		add(faceAccessoryLayer, "circle", { cx: 231, cy: 137, r: 18, fill: "none", stroke: "#b7903c", "stroke-width": 4 });
+		add(faceAccessoryLayer, "path", { d: "M245 149 Q258 175 250 203", fill: "none", stroke: "#b7903c", "stroke-width": 3, "stroke-linecap": "round" });
+	} else if (state.faceAccessory === "glasses") {
+		add(faceAccessoryLayer, "circle", { cx: 188, cy: 137, r: 20, fill: "none", stroke: "#222", "stroke-width": 4 });
+		add(faceAccessoryLayer, "circle", { cx: 232, cy: 137, r: 20, fill: "none", stroke: "#222", "stroke-width": 4 });
+		add(faceAccessoryLayer, "path", { d: "M208 136 Q210 132 212 136 M168 134 L157 130 M252 134 L263 130", fill: "none", stroke: "#222", "stroke-width": 4, "stroke-linecap": "round" });
 	}
 }
 
@@ -383,16 +404,18 @@ function accessoryText() {
 }
 
 function outfitText() {
-	return `${labels.helmets[state.helmet]}, ${labels.suits[state.suit]}, ${labels.feet[state.feet]}, and ${accessoryText()} on ${labels.backgrounds[state.background]}`;
+	const faceText = state.faceAccessory === "none" ? "" : ` with ${labels.faceAccessories[state.faceAccessory]}`;
+	return `${labels.helmets[state.helmet]}${faceText}, ${labels.suits[state.suit]}, ${labels.feet[state.feet]}, and ${accessoryText()} on ${labels.backgrounds[state.background]}`;
 }
 
 function render() {
-	clear(backgroundLayer, suitLayer, helmetLayer, feetLayer, behindLayer, frontLayer);
+	clear(backgroundLayer, suitLayer, helmetLayer, faceAccessoryLayer, feetLayer, behindLayer, frontLayer);
 	astronaut.style.setProperty("--suit-color", suitColors[state.suit]);
 	drawBackground();
 	drawAccessories();
 	drawSuit();
 	drawHelmet();
+	drawFaceAccessory();
 	drawFeet();
 
 	document.querySelectorAll("#gamemenu [data-category] button[data-value]").forEach((button) => {

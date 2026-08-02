@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Astronaut Dressup</title>
 		<link rel="stylesheet" href="../shared/game-shell.css?v=20260802-3" />
-		<link rel="stylesheet" href="style.css?v=20260802-3" />
+		<link rel="stylesheet" href="style.css?v=20260802-4" />
 	</head>
 	<body>
 		<main>
@@ -14,7 +14,7 @@
 					<li><button id="randomize" type="button">Random outfit</button></li>
 					<li><button id="reset" type="button">Reset</button></li>
 					<li class="menu-category"><button class="menu-heading" type="button" aria-expanded="false">Helmet</button><ul data-category="helmet">
-						<li><button type="button" data-value="classic">Classic</button></li><li><button type="button" data-value="bubble">Bubble</button></li><li><button type="button" data-value="cowboy">Cowboy</button></li><li><button type="button" data-value="fish">Fish Magnet</button></li><li><button type="button" data-value="hardhat">Hardhat</button></li><li><button type="button" data-value="glasses">Glasses</button></li><li><button type="button" data-value="bow">Bow</button></li><li><button type="button" data-value="dunce">Dunce Cap</button></li>
+						<li><button type="button" data-value="classic">Classic</button></li><li><button type="button" data-value="bubble">Bubble</button></li><li><button type="button" data-value="cowboy">Cowboy</button></li><li><button type="button" data-value="fish">Fish Magnet</button></li><li><button type="button" data-value="hardhat">Hardhat</button></li><li><button type="button" data-value="bow">Bow</button></li><li><button type="button" data-value="dunce">Dunce Cap</button></li>
 					</ul></li>
 					<li class="menu-category"><button class="menu-heading" type="button" aria-expanded="false">Suit</button><ul data-category="suit">
 						<li><button type="button" data-value="white">White</button></li><li><button type="button" data-value="orange">Orange</button></li><li><button type="button" data-value="pink">Pink</button></li><li><button type="button" data-value="blue">Blue</button></li><li><button type="button" data-value="tuxedo">Tuxedo</button></li><li><button type="button" data-value="plaid">Plaid Shirt</button></li><li><button type="button" data-value="overalls">Farmer's Overalls</button></li>
@@ -22,10 +22,13 @@
 					<li class="menu-category"><button class="menu-heading" type="button" aria-expanded="false">Feet</button><ul data-category="feet">
 						<li><button type="button" data-value="boots">Moon Boots</button></li><li><button type="button" data-value="flippers">Flippers</button></li><li><button type="button" data-value="timbs">Timbs</button></li><li><button type="button" data-value="jordans">Jordans</button></li><li><button type="button" data-value="heels">High Heels</button></li><li><button type="button" data-value="toes">Two Giant Toes</button></li>
 					</ul></li>
-					<li class="menu-category"><button class="menu-heading" type="button" aria-expanded="false">Accessory 1</button><ul data-category="accessory1">
+					<li class="menu-category"><button class="menu-heading" type="button" aria-expanded="false">Accessory</button><ul data-category="faceAccessory">
+						<li><button type="button" data-value="none">None</button></li><li><button type="button" data-value="mustache">Handlebar Mustache</button></li><li><button type="button" data-value="googly">Googly Eyes</button></li><li><button type="button" data-value="clown">Clown Nose</button></li><li><button type="button" data-value="eyepatch">Eye Patch</button></li><li><button type="button" data-value="monocle">Monocle</button></li><li><button type="button" data-value="glasses">Glasses</button></li>
+					</ul></li>
+					<li class="menu-category"><button class="menu-heading" type="button" aria-expanded="false">Left Hand</button><ul data-category="accessory1">
 						<li><button type="button" data-value="none">None</button></li><li><button type="button" data-value="flag">Flag</button></li><li><button type="button" data-value="jetpack">Jetpack</button></li><li><button type="button" data-value="guitar">Acoustic Guitar</button></li><li><button type="button" data-value="net">Butterfly Net</button></li><li><button type="button" data-value="flowers">Flowers</button></li><li><button type="button" data-value="baton">Glow Baton</button></li><li><button type="button" data-value="telescope">Telescope</button></li><li><button type="button" data-value="alien">Tiny Alien</button></li><li><button type="button" data-value="disco">Disco Ball</button></li><li><button type="button" data-value="pitchfork">Farmer's Pitchfork</button></li>
 					</ul></li>
-					<li class="menu-category"><button class="menu-heading" type="button" aria-expanded="false">Accessory 2</button><ul class="align-right" data-category="accessory2">
+					<li class="menu-category"><button class="menu-heading" type="button" aria-expanded="false">Right Hand</button><ul class="align-right" data-category="accessory2">
 						<li><button type="button" data-value="none">None</button></li><li><button type="button" data-value="duck">Space Duck</button></li><li><button type="button" data-value="wrench">Oversized Wrench</button></li><li><button type="button" data-value="coffee">Coffee Mug</button></li><li><button type="button" data-value="bags">Shopping Bags</button></li><li><button type="button" data-value="lollipop">Giant Lollipop</button></li><li><button type="button" data-value="pizza">Pizza Slice</button></li><li><button type="button" data-value="vacuum">Vacuum Cleaner</button></li><li><button type="button" data-value="trophy">Okayest Trophy</button></li><li><button type="button" data-value="cactus">Support Cactus</button></li><li><button type="button" data-value="chicken">Rubber Chicken</button></li>
 					</ul></li>
 					<li class="menu-category"><button class="menu-heading" type="button" aria-expanded="false">Background</button><ul class="align-right" data-category="background">
@@ -60,6 +63,7 @@
 
 						<g id="suit-layer" aria-hidden="true"></g>
 						<g id="helmet-layer" aria-hidden="true"></g>
+						<g id="face-accessory-layer" aria-hidden="true"></g>
 						<g id="feet-layer" aria-hidden="true"></g>
 						<g id="accessory-front" aria-hidden="true"></g>
 					</svg>
@@ -67,6 +71,6 @@
 				</section>
 			</div>
 		</main>
-		<script src="game.js?v=20260802-14"></script>
+		<script src="game.js?v=20260802-15"></script>
 	</body>
 </html>
