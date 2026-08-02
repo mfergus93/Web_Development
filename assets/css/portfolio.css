@@ -50,7 +50,8 @@
 .toy-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 1rem; }
 .toy-grid a.toy { display: flex; min-width: 0; flex-direction: column; overflow: hidden; border: 1px solid rgba(0,0,0,.2); border-radius: 4px; box-shadow: none; text-decoration: none; transition: border-color .2s ease,transform .2s ease; }
 .toy-grid a.toy:hover,.toy-grid a.toy:focus-visible { border-color: rgba(0,0,0,.55); transform: translateY(-3px); }
-.toy-grid a.toy img { display: block; width: 100%; height: 8rem; margin: 0; border-radius: 0; object-fit: cover; }
+.toy-grid a.toy img { display: block; width: calc(100% - .9rem); height: 8rem; margin: .45rem .45rem 0; padding: .35rem; background: #fffaf2; border: 1px solid #c6beb3; border-radius: 0; box-sizing: border-box; object-fit: contain; }
+.toy-grid a.toy:hover img,.toy-grid a.toy:focus-visible img { transform: none; }
 .toy-grid a.toy .label { padding: .75rem .75rem .35rem; color: #212931; font-family: "Source Sans Pro",Helvetica,sans-serif; font-size: .75rem; font-weight: 700; letter-spacing: .04em; line-height: 1.35; text-align: center; text-transform: uppercase; }
 .toy-grid a.toy .desc { margin: 0; padding: 0 .75rem .85rem; color: #4a5057; font-size: .7rem; line-height: 1.45; text-align: center; }
 
