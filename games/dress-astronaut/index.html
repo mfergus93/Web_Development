@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Dress an Astronaut</title>
+		<link rel="stylesheet" href="style.css?v=20260802-2" />
+	</head>
+	<body>
+		<main>
+			<nav id="gamemenu" aria-label="Game controls">
+				<ul>
+					<li><button id="randomize" type="button">Random outfit</button></li>
+					<li><button id="reset" type="button">Reset</button></li>
+					<li class="menu-category"><button class="menu-heading" type="button" aria-expanded="false">Helmet</button><ul data-category="helmet">
+						<li><button type="button" data-value="classic">Classic</button></li><li><button type="button" data-value="bubble">Bubble</button></li><li><button type="button" data-value="cowboy">Cowboy</button></li><li><button type="button" data-value="fish">Fish Magnet</button></li><li><button type="button" data-value="hardhat">Hardhat</button></li><li><button type="button" data-value="glasses">Glasses</button></li><li><button type="button" data-value="bow">Bow</button></li><li><button type="button" data-value="dunce">Dunce Cap</button></li>
+					</ul></li>
+					<li class="menu-category"><button class="menu-heading" type="button" aria-expanded="false">Suit</button><ul data-category="suit">
+						<li><button type="button" data-value="white">White</button></li><li><button type="button" data-value="orange">Orange</button></li><li><button type="button" data-value="pink">Pink</button></li><li><button type="button" data-value="blue">Blue</button></li><li><button type="button" data-value="tuxedo">Tuxedo</button></li><li><button type="button" data-value="plaid">Plaid Shirt</button></li><li><button type="button" data-value="overalls">Farmer's Overalls</button></li>
+					</ul></li>
+					<li class="menu-category"><button class="menu-heading" type="button" aria-expanded="false">Feet</button><ul data-category="feet">
+						<li><button type="button" data-value="boots">Moon Boots</button></li><li><button type="button" data-value="flippers">Flippers</button></li><li><button type="button" data-value="timbs">Timbs</button></li><li><button type="button" data-value="jordans">Jordans</button></li><li><button type="button" data-value="heels">High Heels</button></li><li><button type="button" data-value="toes">Two Giant Toes</button></li>
+					</ul></li>
+					<li class="menu-category"><button class="menu-heading" type="button" aria-expanded="false">Accessory 1</button><ul data-category="accessory1">
+						<li><button type="button" data-value="none">None</button></li><li><button type="button" data-value="flag">Flag</button></li><li><button type="button" data-value="jetpack">Jetpack</button></li><li><button type="button" data-value="guitar">Acoustic Guitar</button></li><li><button type="button" data-value="net">Butterfly Net</button></li><li><button type="button" data-value="flowers">Flowers</button></li><li><button type="button" data-value="baton">Glow Baton</button></li><li><button type="button" data-value="telescope">Telescope</button></li><li><button type="button" data-value="alien">Tiny Alien</button></li><li><button type="button" data-value="disco">Disco Ball</button></li><li><button type="button" data-value="pitchfork">Farmer's Pitchfork</button></li>
+					</ul></li>
+					<li class="menu-category"><button class="menu-heading" type="button" aria-expanded="false">Accessory 2</button><ul class="align-right" data-category="accessory2">
+						<li><button type="button" data-value="none">None</button></li><li><button type="button" data-value="duck">Space Duck</button></li><li><button type="button" data-value="wrench">Oversized Wrench</button></li><li><button type="button" data-value="coffee">Coffee Mug</button></li><li><button type="button" data-value="bags">Shopping Bags</button></li><li><button type="button" data-value="lollipop">Giant Lollipop</button></li><li><button type="button" data-value="pizza">Pizza Slice</button></li><li><button type="button" data-value="vacuum">Vacuum Cleaner</button></li><li><button type="button" data-value="trophy">Okayest Trophy</button></li><li><button type="button" data-value="cactus">Support Cactus</button></li><li><button type="button" data-value="chicken">Rubber Chicken</button></li>
+					</ul></li>
+					<li class="menu-category"><button class="menu-heading" type="button" aria-expanded="false">Background</button><ul class="align-right" data-category="background">
+						<li><button type="button" data-value="moon">Moon</button></li><li><button type="button" data-value="mars">Mars</button></li><li><button type="button" data-value="station">Space Station</button></li><li><button type="button" data-value="castle">Castle</button></li><li><button type="button" data-value="beach">Beach</button></li><li><button type="button" data-value="cornfield">Cornfield</button></li>
+					</ul></li>
+				</ul>
+			</nav>
+
+			<div class="game-layout">
+				<section class="portrait" aria-label="Dressed astronaut preview">
+					<svg id="astronaut" viewBox="0 0 420 540" role="img" aria-labelledby="astronaut-title astronaut-description">
+						<title id="astronaut-title">A customizable astronaut</title>
+						<desc id="astronaut-description">An astronaut wearing a classic helmet, white suit, moon boots, and no accessory.</desc>
+
+						<g id="background-layer" aria-hidden="true"></g>
+						<g id="accessory-behind" aria-hidden="true"></g>
+						<ellipse cx="210" cy="507" rx="118" ry="16" fill="#d8d8d8" />
+
+						<g id="astronaut-body">
+							<path id="left-leg" d="M142 325 L199 325 L192 463 L129 463 Z" />
+							<path id="right-leg" d="M221 325 L278 325 L291 463 L228 463 Z" />
+							<path id="torso" d="M132 188 Q210 159 288 188 L275 352 Q210 374 145 352 Z" />
+							<path id="left-arm" d="M142 205 Q111 214 88 267 L109 282 Q135 250 158 231 Z" />
+							<path id="right-arm" d="M278 205 Q309 214 332 267 L311 282 Q285 250 262 231 Z" />
+							<circle cx="97" cy="278" r="18" class="glove" />
+							<circle cx="323" cy="278" r="18" class="glove" />
+							<rect x="165" y="242" width="90" height="68" rx="8" class="control-panel" />
+							<circle cx="185" cy="263" r="6" fill="#e85d5d" />
+							<circle cx="207" cy="263" r="6" fill="#5ca66b" />
+							<rect x="181" y="282" width="58" height="10" rx="3" fill="#777" />
+						</g>
+
+						<g id="suit-layer" aria-hidden="true"></g>
+						<g id="helmet-layer" aria-hidden="true"></g>
+						<g id="feet-layer" aria-hidden="true"></g>
+						<g id="accessory-front" aria-hidden="true"></g>
+					</svg>
+					<p id="outfit-status" role="status" aria-live="polite"></p>
+				</section>
+			</div>
+		</main>
+		<script src="game.js?v=20260802-14"></script>
+	</body>
+</html>
