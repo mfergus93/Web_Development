@@ -1,0 +1,165 @@
+html { background: #212931; }
+
+body {
+	min-width: 320px;
+	min-height: 100vh;
+	background-color: #212931;
+	background-image: url("../../images/overlay.png"), linear-gradient(0deg,rgba(0,0,0,.1),rgba(0,0,0,.1)), url("../../images/bg.jpg");
+	background-position: center,center,top center;
+	background-repeat: repeat,no-repeat,no-repeat;
+	background-size: auto,auto,100% auto;
+	background-attachment: fixed,fixed,fixed;
+}
+
+[hidden] { display: none !important; }
+
+.game-shell {
+	width: 75%;
+	max-width: 67rem;
+	min-height: 100vh;
+	margin: 0 auto;
+	padding: 3rem 0;
+}
+
+.home-link {
+	display: inline-block;
+	margin: 0 0 1rem;
+	border-bottom-color: rgba(255,255,255,.5);
+	color: #fff;
+	font-family: "Source Sans Pro",Helvetica,sans-serif;
+	font-weight: 900;
+	letter-spacing: .075em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.home-link:hover { color: #18bfef; }
+
+.game-card {
+	padding: 3rem;
+	border: solid 2px #d8d1c7;
+	background: #fffaf2;
+	text-align: center;
+}
+
+.game-card h1 {
+	margin: 0 0 2rem;
+	color: #212931;
+	font-size: 3.25rem;
+	line-height: 1;
+}
+
+.location-prompt { max-width: 24rem; margin: 0 auto; }
+
+.location-prompt p {
+	margin: .85rem 0 0;
+	color: #717981;
+	font-size: .75rem;
+	line-height: 1.5;
+}
+
+.location-prompt button,
+.replay-button {
+	min-width: 14rem;
+	height: 3rem;
+	padding: 0 1.5rem;
+	border: 0;
+	border-radius: 0;
+	background: #212931;
+	box-shadow: none;
+	color: #fff !important;
+	cursor: pointer;
+	font-family: "Source Sans Pro",Helvetica,sans-serif;
+	font-size: .8rem;
+	font-weight: 900;
+	letter-spacing: .075em;
+	text-transform: uppercase;
+}
+
+.location-prompt button:hover,
+.replay-button:hover { background: #18bfef; }
+
+.location-prompt button:disabled { cursor: wait; opacity: .55; }
+
+.location-prompt button:focus-visible,
+.replay-button:focus-visible,
+.home-link:focus-visible {
+	outline: solid 3px #18bfef;
+	outline-offset: 3px;
+}
+
+.game-status {
+	min-height: 1.5em;
+	margin: 1rem 0 0;
+	color: #6f3030;
+	font-size: .8rem;
+	line-height: 1.5;
+}
+
+.map-stage {
+	position: relative;
+	margin-top: 2rem;
+	border: 2px solid #c6beb3;
+	overflow: hidden;
+}
+
+#missile-map {
+	width: 100%;
+	height: min(62vh,38rem);
+	min-height: 24rem;
+	background: #e8e5df;
+}
+
+.countdown {
+	position: absolute;
+	inset: 0;
+	z-index: 700;
+	display: grid;
+	place-items: center;
+	pointer-events: none;
+	color: #212931;
+	font-family: "Source Sans Pro",Helvetica,sans-serif;
+	font-size: clamp(5rem,15vw,10rem);
+	font-weight: 900;
+	text-shadow: 0 2px 8px rgba(255,255,255,.8);
+}
+
+.replay-button { margin-top: 1.5rem; }
+
+.missile-icon { background: transparent; border: 0; }
+.missile-glyph { display: block; width: 34px; height: 15px; filter: drop-shadow(0 2px 3px rgba(0,0,0,.8)); transform: rotate(var(--heading,0deg)); transform-origin: center; }
+.destination-pulse { animation: destination-pulse 900ms ease-out 2; background: rgba(24,191,239,.35); border: 2px solid #18bfef; border-radius: 50%; }
+
+@keyframes destination-pulse {
+	from { opacity: 1; transform: scale(.35); }
+	to { opacity: 0; transform: scale(2.2); }
+}
+
+.leaflet-container { font-family: "Merriweather",Georgia,serif; }
+.leaflet-control-attribution { font-size: 9px; }
+
+@media screen and (max-width: 980px) {
+	.game-shell { width: calc(100% - 3rem); max-width: none; }
+}
+
+@media screen and (max-width: 736px) {
+	body { background-size: auto,auto,auto 175%; }
+	.game-shell { padding: 1.5rem 0; }
+	.game-card { padding: 2rem 1rem; }
+	.game-card h1 { font-size: 2.5rem; }
+	#missile-map { min-height: 22rem; }
+}
+
+@media screen and (max-width: 480px) {
+	.game-shell { width: 100%; }
+	.home-link { margin-left: 1rem; }
+	.game-card { border-right: 0; border-left: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,*::before,*::after {
+		animation-duration: .01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: .01ms !important;
+	}
+}

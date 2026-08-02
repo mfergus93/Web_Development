@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>Just for Fun | Matt Ferguson</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Small interactive experiments by Matt Ferguson, including the fictional Launch a Missile map game." />
+		<meta name="theme-color" content="#101820" />
+		<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/portfolio.css" />
+		<link rel="stylesheet" href="assets/css/fun.css" />
+	</head>
+	<body>
+		<a class="skip-link" href="#game">Skip to game</a>
+
+		<main id="game" class="game-shell">
+			<a class="home-link" href="index.html" aria-label="Return to Matt Ferguson's portfolio">&larr; Portfolio</a>
+			<section class="game-card" aria-labelledby="game-title">
+				<h1 id="game-title">Launch a Missile</h1>
+				<div id="location-prompt" class="location-prompt">
+					<button id="locate-button" type="button">Use My Location</button>
+					<p>Your location is used only for this animation and is not stored.</p>
+				</div>
+				<p id="game-status" class="game-status" role="status" aria-live="polite"></p>
+				<div id="map-stage" class="map-stage" hidden>
+					<div id="missile-map" aria-label="Map showing the animated flight"></div>
+					<div id="countdown" class="countdown" aria-hidden="true"></div>
+				</div>
+				<button id="replay-button" class="replay-button" type="button" hidden>Launch Again</button>
+			</section>
+		</main>
+
+		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
+		<script src="assets/js/fun.js"></script>
+	</body>
+</html>
