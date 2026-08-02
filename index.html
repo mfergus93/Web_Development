@@ -25,7 +25,7 @@
 		<meta name="twitter:description" content="Explore Matt Ferguson's software engineering, machine learning, and computer vision projects." />
 		<meta name="twitter:image" content="https://matferg.com/assets/images/figure-24.png" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/portfolio.css" />
+		<link rel="stylesheet" href="assets/css/portfolio.css?v=20260801-4" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script type="application/ld+json">
 		{
@@ -36,6 +36,7 @@
 			"jobTitle": "Machine Learning Engineer and Computational Astronomy Researcher",
 			"sameAs": [
 				"https://github.com/mfergus93",
+				"https://www.linkedin.com/in/matthew-ferguson-85336b13b/",
 				"https://www.facebook.com/matt.soso.562"
 			]
 		}
@@ -56,13 +57,8 @@
 						</p>
 						
 						<p class="intro-links">
-							<a href="https://github.com/mfergus93">GitHub</a> <br />
-							<a href="assets/pdf/resume.pdf">Resume</a> <br />
-							<a href="https://www.facebook.com/matt.soso.562">Facebook</a> <br />
-							<a href="mailto:mcferguson9@gmail.com">Contact</a> <br />
-							<a href="fun.html">Just for Fun</a> <br />
-							<a href="privacy.html">Privacy</a>
-
+							<span class="intro-link-row"><a href="assets/pdf/resume.pdf">Resume</a> <a href="https://github.com/mfergus93">GitHub</a> <a href="https://www.linkedin.com/in/matthew-ferguson-85336b13b/">LinkedIn</a></span>
+							<span class="intro-link-row"><a href="mailto:mcferguson9@gmail.com">Contact</a> <a href="https://www.facebook.com/matt.soso.562">Facebook</a> <a href="fun.html">Just for Fun</a></span>
 						</p>
 						
 						<ul class="actions intro-actions">
@@ -74,23 +70,23 @@
 					<div id="main">
 
 						<!-- Featured Research: Galactic Redshift -->
-							<article class="post featured">
+							<details class="portfolio-section featured-project">
+								<summary>New Benchmarks in Galactic Redshift Estimation</summary>
+								<article class="post featured">
 								<header class="major">
-									<h2>Setting Benchmarks in<br />
-									Galactic Redshift Estimation</h2>
 									<p>Novel deep-learning segmentation techniques that establish new benchmarks in photometric redshift estimation.</p>
 								</header>
 								<a href="https://vtechworks.lib.vt.edu/items/f49b05d7-87c7-4264-a0bd-02b69c280abd" class="research-link">
 									<span class="image main"><img src="assets/images/figure-24.png" width="1465" height="640" alt="Galaxy images and their absolute flood-fill segmentation results" /></span>
 									<span class="research-affordance">View thesis and research details <span aria-hidden="true">&rarr;</span></span>
 								</a>
-							</article>
+								</article>
+							</details>
 
 						<!-- Computer Vision group -->
-							<header class="major">
-								<h2>Computer Vision</h2>
-							</header>
-							<section class="posts">
+							<details class="portfolio-section vision-projects">
+								<summary>Computer Vision</summary>
+								<section class="posts">
 
 								<article>
 									<header>
@@ -124,20 +120,27 @@
 									<p>Images of the same location are stitched together using keypoint detection, homographic transformations, and linear blending across increasingly challenging panoramas.</p>
 								</article>
 
-							</section>
+								</section>
+							</details>
 
-						<!-- Toy Projects (collapsible) -->
-														<details class="toy-projects">
-								<summary>Toy Projects</summary>
+						<!-- Machine Learning projects (collapsible) -->
+							<details class="portfolio-section compact-projects">
+								<summary>Machine Learning</summary>
 								<div class="toy-grid">
-									
-									<a class="toy" href="https://github.com/mfergus93/Application_Development/tree/main/message_encryption"><img src="images/app2.jpg" width="1074" height="710" loading="lazy" alt="Encryption application interface" /><span class="label">Encryption</span><span class="desc">A C++ and Qt application that encrypts and decrypts strings using established design patterns.</span></a>
-									<a class="toy" href="https://github.com/mfergus93/Project_Euler"><img src="images/euler.jpg" width="1164" height="774" loading="lazy" alt="Project Euler mathematical illustration" /><span class="label">Project Euler</span><span class="desc">Solutions to Project Euler's mathematics and computer science challenges.</span></a>
 									<a class="toy" href="https://github.com/mfergus93/Machine_Learning/tree/main/census"><img src="images/census.jpg" width="612" height="433" loading="lazy" alt="Census data visualization" /><span class="label">Census Decision Tree</span><span class="desc">Decision-tree and random-forest models that classify dividend receipt from census data.</span></a>
 									<a class="toy" href="https://github.com/mfergus93/Machine_Learning/tree/main/baseball_salaries_KNN"><img src="images/batter.jpg" width="2048" height="1152" loading="lazy" alt="Baseball batter used to illustrate salary prediction" /><span class="label">Baseball Salary KNN</span><span class="desc">K-nearest-neighbors regression that predicts professional baseball salaries from batting and run statistics.</span></a>
 									<a class="toy" href="https://github.com/mfergus93/Machine_Learning/tree/main/covid"><img src="images/covid.jpg" width="2048" height="1152" loading="lazy" alt="COVID-19 analytics dashboard" /><span class="label">COVID-19 Analytics</span><span class="desc">Exploratory data analysis of COVID-19 hospital data.</span></a>
 									<a class="toy" href="https://github.com/mfergus93/Machine_Learning/tree/main/heart_disease"><img src="images/heart.jpg" width="2048" height="1152" loading="lazy" alt="Heart illustration for cardiac-disease data analysis" /><span class="label">Cardiac Disease DQR</span><span class="desc">A data-quality report that evaluates heart-disease data before analysis.</span></a>
 									<a class="toy" href="https://github.com/mfergus93/Machine_Learning/tree/main/decision_trees"><img src="images/mushroom.jpg" width="2048" height="1152" loading="lazy" alt="Mushrooms used for an edibility classifier" /><span class="label">Mushroom Edibility</span><span class="desc">A decision-tree classifier that predicts whether mushrooms are edible.</span></a>
+								</div>
+							</details>
+
+						<!-- Algorithm projects (collapsible) -->
+							<details class="portfolio-section compact-projects">
+								<summary>Algorithms</summary>
+								<div class="toy-grid">
+									<a class="toy" href="https://github.com/mfergus93/Application_Development/tree/main/message_encryption"><img src="images/app2.jpg" width="1074" height="710" loading="lazy" alt="Encryption application interface" /><span class="label">Encryption</span><span class="desc">A C++ and Qt application that encrypts and decrypts strings using established design patterns.</span></a>
+									<a class="toy" href="https://github.com/mfergus93/Project_Euler"><img src="images/euler.jpg" width="1164" height="774" loading="lazy" alt="Project Euler mathematical illustration" /><span class="label">Project Euler</span><span class="desc">Solutions to Project Euler's mathematics and computer science challenges.</span></a>
 								</div>
 							</details>
 

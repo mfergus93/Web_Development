@@ -18,6 +18,33 @@
 	let animationFrame;
 	let launchSequence = 0;
 
+	document.querySelectorAll(".puzzle-frame iframe").forEach(function (frame) {
+		function resizeFrame() {
+			try {
+				const body = frame.contentDocument.body;
+				const bodyStyle = frame.contentWindow.getComputedStyle(body);
+				const contentHeight = body.getBoundingClientRect().height + parseFloat(bodyStyle.marginTop) + parseFloat(bodyStyle.marginBottom);
+				if (contentHeight > 0) frame.style.height = Math.ceil(contentHeight + 4) + "px";
+			} catch (error) {
+				// Keep the CSS fallback height if the embedded document is unavailable.
+			}
+		}
+
+		frame.addEventListener("load", function () {
+			resizeFrame();
+			if ("ResizeObserver" in window) {
+				const observer = new ResizeObserver(resizeFrame);
+				observer.observe(frame.contentDocument.documentElement);
+				observer.observe(frame.contentDocument.body);
+			}
+		});
+
+		const panel = frame.closest("details");
+		if (panel) panel.addEventListener("toggle", function () {
+			if (panel.open) window.setTimeout(resizeFrame, 0);
+		});
+	});
+
 	function setStatus(message) { status.textContent = message; }
 
 	function ensureMap() {

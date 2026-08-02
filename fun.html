@@ -9,30 +9,49 @@
 		<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/portfolio.css" />
-		<link rel="stylesheet" href="assets/css/fun.css" />
+		<link rel="stylesheet" href="assets/css/portfolio.css?v=20260801-4" />
+		<link rel="stylesheet" href="assets/css/fun.css?v=20260801-1" />
 	</head>
 	<body>
 		<a class="skip-link" href="#game">Skip to game</a>
 
 		<main id="game" class="game-shell">
 			<a class="home-link" href="index.html" aria-label="Return to Matt Ferguson's portfolio">&larr; Portfolio</a>
-			<section class="game-card" aria-labelledby="game-title">
-				<h1 id="game-title">Launch a Missile</h1>
-				<div id="location-prompt" class="location-prompt">
-					<button id="locate-button" type="button">Use My Location</button>
-					<p>Your location is used only for this animation and is not stored.</p>
+			<h1 class="fun-title">Just for Fun</h1>
+
+			<details class="fun-item missile-game" hidden>
+				<summary>Launch a Missile</summary>
+				<section class="game-card" aria-label="Launch a Missile game">
+					<div id="location-prompt" class="location-prompt">
+						<button id="locate-button" type="button">Use My Location</button>
+					</div>
+					<p id="game-status" class="game-status" role="status" aria-live="polite"></p>
+					<div id="map-stage" class="map-stage" hidden>
+						<div id="missile-map" aria-label="Map showing the animated flight"></div>
+						<div id="countdown" class="countdown" aria-hidden="true"></div>
+					</div>
+					<button id="replay-button" class="replay-button" type="button" hidden>Launch Again</button>
+				</section>
+			</details>
+
+			<details class="fun-item galaxies-game">
+				<summary>Galaxies</summary>
+				<div class="puzzle-frame">
+					<iframe src="games/galaxies/index.html" title="Galaxies puzzle" loading="lazy"></iframe>
 				</div>
-				<p id="game-status" class="game-status" role="status" aria-live="polite"></p>
-				<div id="map-stage" class="map-stage" hidden>
-					<div id="missile-map" aria-label="Map showing the animated flight"></div>
-					<div id="countdown" class="countdown" aria-hidden="true"></div>
+			</details>
+
+			<details class="fun-item map-game">
+				<summary>Map</summary>
+				<div class="puzzle-frame">
+					<iframe src="games/map/index.html" title="Map puzzle" loading="lazy"></iframe>
 				</div>
-				<button id="replay-button" class="replay-button" type="button" hidden>Launch Again</button>
-			</section>
+			</details>
+
+			<p class="puzzle-license"><a href="games/galaxies/LICENSE.txt">MIT License</a></p>
 		</main>
 
 		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
-		<script src="assets/js/fun.js"></script>
+		<script src="assets/js/fun.js?v=20260801-1"></script>
 	</body>
 </html>
