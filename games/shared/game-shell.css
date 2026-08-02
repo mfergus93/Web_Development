@@ -145,6 +145,14 @@ main { isolation: isolate; width: min(100%,900px); margin: 0 auto; text-align: c
 
 #resizehandle { display: none; }
 
+.game-instructions {
+	width: min(100%,32rem);
+	margin: .65rem auto 0;
+	font-size: .78rem;
+	line-height: 1.4;
+	text-align: left;
+}
+
 #resizable,
 .game-layout {
 	position: relative;
