@@ -1,0 +1,26 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "matferg-visitor-logger",
+  "main": "src/index.js",
+  "compatibility_date": "2026-08-01",
+  "workers_dev": false,
+  "routes": [
+    {
+      "pattern": "matferg.com/*",
+      "zone_name": "matferg.com"
+    }
+  ],
+  "d1_databases": [
+    {
+      "binding": "VISITOR_DB",
+      "database_name": "matferg-visitors",
+      "database_id": "57740fc3-2df4-45b4-9b83-8479b5d5a871"
+    }
+  ],
+  "vars": {
+    "RETENTION_DAYS": "30"
+  },
+  "triggers": {
+    "crons": ["17 4 * * *"]
+  }
+}

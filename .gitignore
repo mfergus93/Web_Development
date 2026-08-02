@@ -1,0 +1,27 @@
+# Editor and project metadata
+.spyproject/
+.vscode/
+.idea/
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local spreadsheets and Office temporary files
+*.xlsx
+~$*.docx
+
+# Local deployment notes
+my_commands.txt
+
+# Sass caches and source maps
+.sass-cache/
+*.css.map
+
+# JavaScript dependencies
+node_modules/
+
+# Local Worker credentials
+.dev.vars*
+*.secret.clixml

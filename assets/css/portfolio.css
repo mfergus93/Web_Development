@@ -1,0 +1,77 @@
+/* Compiled from assets/sass/layout/_portfolio.scss. */
+.skip-link { position: fixed; top: 1rem; left: 1rem; z-index: 10001; padding: .75rem 1rem; background: #fff; color: #212931; font-weight: 700; transform: translateY(-200%); }
+.skip-link:focus { transform: translateY(0); }
+#intro::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(10,15,20,.24); }
+#intro h1,#intro p.intro-role { text-shadow: 0 2px 8px rgba(0,0,0,.72); }
+#intro h1 { font-size: 4.25rem; white-space: nowrap; }
+#intro p.intro-role { font-size: 1.4rem; line-height: 1.35; }
+#intro p.intro-role strong,#intro p.intro-role span { display: block; }
+#intro p.intro-role strong { font-size: 1.18em; font-weight: 700; }
+#intro p.intro-links { font-size: 1.4rem; line-height: 2; }
+#intro .intro-actions { align-items: center; }
+#intro .intro-actions li { padding: 0; }
+#main { width: 75%; max-width: 67rem; background-color: #fffaf2; border: solid 2px #d8d1c7; box-sizing: border-box; }
+#main > * { padding: 2rem 2rem 1rem; border-top-width: 2px; border-color: #d8d1c7; }
+#main > .post { padding: 2.25rem 2rem 1.75rem; }
+header.major { margin-bottom: 1.25rem; }
+#main > .post header.major > .date { margin-top: 0; margin-bottom: 1.25rem; }
+#main > .post header.major > h2 { font-size: calc(4rem - 3pt); margin-bottom: .75rem; line-height: 1.05; }
+#main > .post header.major > p { font-size: calc(1rem + 1pt); line-height: 1.65; }
+#main > .post.featured .research-link { display: block; border-bottom: 0; text-align: center; }
+#main > .post.featured .image.main { display: flex; margin: 1.5rem 0 .75rem; padding: .75rem; background: #fff; border: solid 2px #c6beb3; box-sizing: border-box; }
+#main > .post.featured .image.main img { width: 100%; height: auto; aspect-ratio: 1465 / 640; object-fit: contain; }
+.research-affordance { display: inline-block; color: #4a5057; font-family: "Source Sans Pro",Helvetica,sans-serif; font-size: .9rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.research-link:hover .research-affordance,.research-link:focus-visible .research-affordance { color: #18bfef; }
+#main > header.major { padding-top: 1.5rem; padding-bottom: 1rem; }
+#main > .posts > article { display: flex; flex-direction: column; padding: 2rem 2rem 1.5rem; border-color: #d8d1c7; border-top-width: 2px; border-left-width: 2px; }
+#main > .posts > article:nth-child(2n - 1) { border-left-width: 0; }
+#main > .posts > article:nth-child(-n + 2) { border-top-width: 0; }
+#main > .posts > article header { display: flex; align-items: center; justify-content: center; min-height: 4.5rem; }
+#main > .posts > article h2 { margin-bottom: 0; line-height: 1.1; }
+#main > .posts > article .image.fit { margin: 1.25rem 0; }
+#main > .posts > article p { margin-bottom: .5rem; line-height: 1.65; text-align: left; }
+#main > .posts .media-frame { display: flex; align-items: center; justify-content: center; width: 100%; aspect-ratio: 3 / 2; padding: .75rem; background: #fff; border: solid 2px #c6beb3; box-sizing: border-box; overflow: hidden; }
+#main > .posts .media-frame img { display: block; width: 100%; height: 100%; margin: 0; object-fit: contain; }
+#main > .posts .media-frame:hover img { transform: none; }
+#main > .posts a:focus-visible,.research-link:focus-visible { outline: solid 3px #18bfef; outline-offset: 3px; }
+.toy-projects { margin-bottom: 3rem; }
+.toy-projects > summary { display: block; padding: 1.25rem 2rem; border: solid 2px rgba(0,0,0,.15); border-radius: 4px; cursor: pointer; font-family: "Source Sans Pro",Helvetica,sans-serif; font-size: 1.75rem; font-weight: 900; letter-spacing: .075em; list-style: none; text-align: center; text-transform: uppercase; transition: background-color .2s ease,border-color .2s ease; }
+.toy-projects > summary::-webkit-details-marker { display: none; }
+.toy-projects > summary::after { content: " +"; opacity: .6; }
+.toy-projects[open] > summary { margin-bottom: 3rem; }
+.toy-projects[open] > summary::after { content: " \2013"; }
+.toy-projects > summary:hover,
+.toy-projects > summary:focus-visible { background-color: rgba(0,0,0,.04); border-color: rgba(0,0,0,.45); }
+.toy-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 1rem; }
+.toy-grid a.toy { display: flex; flex-direction: column; border: solid 1px rgba(0,0,0,.2); border-radius: 4px; box-shadow: none; overflow: hidden; text-decoration: none; transition: border-color .2s ease,transform .2s ease; }
+.toy-grid a.toy:hover,
+.toy-grid a.toy:focus-visible { border-color: rgba(0,0,0,.55); transform: translateY(-3px); }
+.toy-grid a.toy:focus-visible,
+.toy-projects > summary:focus-visible,
+#nav a:focus-visible { outline: solid 3px #18bfef; outline-offset: 3px; }
+.toy-grid a.toy img { display: block; width: 100%; height: 8rem; margin: 0; border-radius: 0; object-fit: cover; }
+.toy-grid a.toy .label { padding: .75rem .75rem .35rem; color: #212931; font-family: "Source Sans Pro",Helvetica,sans-serif; font-size: .75rem; font-weight: 700; letter-spacing: .04em; line-height: 1.35; text-align: center; text-transform: uppercase; }
+.toy-grid a.toy .desc { margin: 0; padding: 0 .75rem .85rem; color: #4a5057; font-size: .7rem; line-height: 1.45; text-align: center; }
+html { font-size: 14pt; }
+@media screen and (max-width: 1680px) { html { font-size: 10pt; } }
+@media screen and (max-width: 1280px) { html { font-size: 9pt; } }
+@media screen and (max-width: 980px) {
+  #main { width: calc(100% - 3rem); max-width: none; }
+  .toy-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  #main > .posts > article { padding: 1.75rem 1.5rem 1.25rem; }
+}
+@media screen and (max-width: 480px) { .toy-grid { grid-template-columns: 1fr; } }
+@media screen and (max-width: 736px) {
+  #intro h1 { font-size: 2.75rem; }
+  #intro p.intro-role { font-size: 1.4rem; }
+  #intro p.intro-links { font-size: 1.3rem; }
+  #main > .post header.major > h2 { font-size: calc(2.5rem - 3pt); }
+  #main > .posts > article:nth-child(n) { border-left-width: 0; }
+  #main > .posts > article:nth-child(n + 2) { border-top-width: 2px; }
+  #main > .posts > article header { min-height: 0; }
+}
+@media screen and (max-width: 360px) { html { font-size: 8pt; } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *,*::before,*::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
