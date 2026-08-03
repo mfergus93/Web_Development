@@ -35,6 +35,18 @@
 .research-affordance { display: inline-block; color: #4a5057; font-family: "Source Sans Pro",Helvetica,sans-serif; font-size: .9rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
 .research-link:hover .research-affordance,.research-link:focus-visible .research-affordance { color: #18bfef; }
 
+.consulting-content { text-align: center; }
+.consulting-intro { max-width: 52rem; margin: 0 auto 1.5rem; font-size: 1.1rem; line-height: 1.7; }
+.consulting-services { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; margin-bottom: 1.5rem; text-align: left; }
+.consulting-services article { min-width: 0; padding: 1.25rem; border: 1px solid #c6beb3; border-radius: 4px; background: rgba(255,255,255,.35); }
+.consulting-services h2 { margin: 0 0 .75rem; font-size: 1rem; line-height: 1.3; }
+.consulting-services p { margin: 0; color: #4a5057; font-size: .85rem; line-height: 1.6; }
+.consulting-engagements,.consulting-proof { max-width: 56rem; margin: 0 auto 1rem; line-height: 1.65; text-align: left; }
+.consulting-proof a { font-weight: 700; }
+.consulting-cta { max-width: 48rem; margin: 1.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid #d8d1c7; }
+.consulting-cta p { margin-bottom: 1rem; line-height: 1.6; }
+.consulting-cta .button { margin: 0; }
+
 .vision-projects > .posts { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); width: 100%; padding: 0; text-align: center; }
 .vision-projects > .posts > article { display: flex; min-width: 0; flex-direction: column; padding: 2rem 2rem 1.5rem; border-color: #d8d1c7; border-style: solid; border-top-width: 2px; border-left-width: 2px; }
 .vision-projects > .posts > article:nth-child(2n - 1) { border-left-width: 0; }
@@ -78,6 +90,7 @@ html { font-size: 10pt; }
   .vision-projects > .posts > article { border-left-width: 0; }
   .vision-projects > .posts > article:nth-child(n + 2) { border-top-width: 2px; }
   .vision-projects > .posts > article header { min-height: 0; }
+	.consulting-services { grid-template-columns: 1fr; }
 }
 
 @media screen and (max-width: 480px) {
