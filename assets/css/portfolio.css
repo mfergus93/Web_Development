@@ -41,16 +41,14 @@
 .consulting-kicker { margin: 0 0 .65rem; font-family: "Source Sans Pro",Helvetica,sans-serif; font-size: 1.15rem; font-weight: 900; letter-spacing: .06em; line-height: 1.3; text-align: center !important; text-transform: uppercase; text-wrap: balance; }
 .consulting-intro { margin: 0; font-size: 1.05rem; line-height: 1.7; }
 .consulting-services { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; margin-bottom: 1.5rem; text-align: left; }
-.consulting-services article { display: grid; min-width: 0; grid-template-rows: minmax(2.6em,auto) 1fr; padding: 1.25rem; border: 1px solid #c6beb3; border-radius: 4px; background: rgba(255,255,255,.35); }
-.consulting-services h2 { margin: 0 0 .75rem; font-size: 1rem; line-height: 1.3; text-wrap: balance; }
+.consulting-services article { display: flex; min-width: 0; flex-direction: column; padding: 1.25rem; border: 1px solid #c6beb3; border-radius: 4px; background: rgba(255,255,255,.35); }
+.consulting-services h2 { min-height: 2.6em; margin: 0 0 .75rem; font-size: 1rem; line-height: 1.3; text-wrap: balance; }
 .consulting-services p { margin: 0; color: #4a5057; font-size: .85rem; line-height: 1.6; }
-.consulting-results,.consulting-engagements { margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid #d8d1c7; }
-.consulting-results > h2,.consulting-engagements > h2 { margin: 0 0 1.25rem; font-size: 1.05rem; text-wrap: balance; }
-.consulting-metrics { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: .75rem; text-align: left; }
-.consulting-metrics p { margin: 0; padding: 1rem; background: rgba(255,255,255,.32); border-left: 3px solid #c6beb3; font-size: .78rem; line-height: 1.45; }
-.consulting-metrics strong,.consulting-metrics span { display: block; }
-.consulting-metrics strong { min-height: 2.5em; margin-bottom: .3rem; color: #212931; font-family: "Source Sans Pro",Helvetica,sans-serif; font-size: .9rem; letter-spacing: .025em; line-height: 1.25; text-transform: uppercase; text-wrap: balance; }
-.consulting-metrics a { font-weight: 700; }
+.consulting-services .consulting-card-proof { margin-top: 1rem; padding-top: .85rem; border-top: 1px solid #d8d1c7; color: #343a40; font-size: .78rem; }
+.consulting-card-proof strong { color: #212931; font-family: "Source Sans Pro",Helvetica,sans-serif; font-size: .76rem; letter-spacing: .04em; text-transform: uppercase; }
+.consulting-card-proof a { font-weight: 700; }
+.consulting-engagements { margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid #d8d1c7; }
+.consulting-engagements > h2 { margin: 0 0 1.25rem; font-size: 1.05rem; text-wrap: balance; }
 .consulting-engagements ol { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; margin: 0; padding: 0; list-style: none; counter-reset: consulting-step; text-align: left; }
 .consulting-engagements li { position: relative; min-width: 0; padding-left: 2.25rem; counter-increment: consulting-step; }
 .consulting-engagements li::before { content: counter(consulting-step); position: absolute; top: 0; left: 0; width: 1.6rem; height: 1.6rem; border: 1px solid #c6beb3; border-radius: 50%; font-family: "Source Sans Pro",Helvetica,sans-serif; font-weight: 900; line-height: 1.5rem; text-align: center; }
@@ -104,9 +102,8 @@ html { font-size: 10pt; }
   .vision-projects > .posts > article { border-left-width: 0; }
   .vision-projects > .posts > article:nth-child(n + 2) { border-top-width: 2px; }
   .vision-projects > .posts > article header { min-height: 0; }
-	.consulting-services,.consulting-metrics,.consulting-engagements ol { grid-template-columns: 1fr; }
-	.consulting-services article { grid-template-rows: auto 1fr; }
-	.consulting-metrics strong { min-height: 0; }
+	.consulting-services,.consulting-engagements ol { grid-template-columns: 1fr; }
+	.consulting-services h2 { min-height: 0; }
 }
 
 @media screen and (max-width: 480px) {
