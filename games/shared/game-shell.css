@@ -1,7 +1,10 @@
 * { box-sizing: border-box; }
 
+/* The game chrome follows the site rhythm; sub-em menu spacing stays compact by design. */
+:root { --game-space-optical: .25rem; --game-space-xs: .5rem; --game-space-sm: 1rem; }
+
 html { font-family: Verdana,Arial,sans-serif; color: #111; background: #fff; }
-body { margin: 0; padding: .5rem; background: #fff; }
+body { margin: 0; padding: var(--game-space-xs); background: #fff; }
 body > hr,
 body > p,
 body > details { display: none !important; }
@@ -147,7 +150,7 @@ main { isolation: isolate; width: min(100%,900px); margin: 0 auto; text-align: c
 
 .game-instructions {
 	width: min(100%,32rem);
-	margin: .65rem auto 0;
+	margin: var(--game-space-xs) auto 0;
 	font-size: .78rem;
 	line-height: 1.4;
 	text-align: left;
@@ -166,7 +169,7 @@ main { isolation: isolate; width: min(100%,900px); margin: 0 auto; text-align: c
 }
 
 @media (max-width: 520px) {
-	body { padding: .25rem; }
+	body { padding: var(--game-space-optical); }
 	#gamemenu li > * { padding: .3em .55em; }
 	#gamemenu ul ul,
 	#gamemenu .menu-category > ul { min-width: 10.5rem; }
