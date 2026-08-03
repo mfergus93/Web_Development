@@ -57,7 +57,6 @@
 .consulting-engagements strong,.consulting-engagements span { display: block; }
 .consulting-engagements strong { margin-bottom: .35rem; font-family: "Source Sans Pro",Helvetica,sans-serif; font-size: .9rem; letter-spacing: .04em; text-transform: uppercase; }
 .consulting-engagements span { color: #4a5057; font-size: .8rem; line-height: 1.55; }
-.consulting-domains { max-width: 56rem; margin: 1.75rem auto 0; line-height: 1.65; }
 .consulting-cta { max-width: 48rem; margin: 1.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid #d8d1c7; }
 .consulting-cta p { margin-bottom: 1rem; line-height: 1.6; }
 .consulting-cta .button { margin: 0; }
