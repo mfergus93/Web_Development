@@ -37,6 +37,7 @@
 
 .consulting-content { text-align: center; }
 .consulting-content p { text-align: left; text-wrap: pretty; }
+.consulting-section[open] { padding-bottom: 1.25rem; }
 .consulting-header { max-width: 56rem; margin: 0 auto 1.75rem; }
 .consulting-kicker { margin: 0 0 .65rem; font-family: "Source Sans Pro",Helvetica,sans-serif; font-size: 1.15rem; font-weight: 900; letter-spacing: .06em; line-height: 1.3; text-align: center !important; text-transform: uppercase; text-wrap: balance; }
 .consulting-intro { margin: 0; font-size: 1.05rem; line-height: 1.7; }
@@ -57,8 +58,8 @@
 .consulting-engagements strong,.consulting-engagements span { display: block; }
 .consulting-engagements strong { margin-bottom: .35rem; font-family: "Source Sans Pro",Helvetica,sans-serif; font-size: .9rem; letter-spacing: .04em; text-transform: uppercase; }
 .consulting-engagements span { color: #4a5057; font-size: .8rem; line-height: 1.55; }
-.consulting-cta { max-width: 48rem; margin: 1rem auto 0; padding-top: 1rem; border-top: 1px solid #d8d1c7; }
-.consulting-cta p { margin-bottom: .75rem; line-height: 1.5; }
+.consulting-cta { max-width: 48rem; margin: 1rem auto 0; padding-top: 1.25rem; border-top: 1px solid #d8d1c7; }
+.consulting-cta p { margin-bottom: 1rem; line-height: 1.65; }
 .consulting-cta .button { margin: 0; }
 
 .vision-projects > .posts { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); width: 100%; padding: 0; text-align: center; }
