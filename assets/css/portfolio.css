@@ -47,6 +47,7 @@
 .consulting-services .consulting-card-proof { margin-top: 1rem; padding-top: .85rem; border-top: 1px solid #d8d1c7; color: #343a40; font-size: .78rem; }
 .consulting-card-proof strong { color: #212931; font-family: "Source Sans Pro",Helvetica,sans-serif; font-size: .76rem; letter-spacing: .04em; text-transform: uppercase; }
 .consulting-card-proof a { font-weight: 700; }
+.consulting-customers { max-width: 56rem; margin: 1.5rem auto 0; line-height: 1.6; text-align: center !important; }
 .consulting-engagements { margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid #d8d1c7; }
 .consulting-engagements > h2 { margin: 0 0 1.25rem; font-size: 1.05rem; text-wrap: balance; }
 .consulting-engagements ol { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; margin: 0; padding: 0; list-style: none; counter-reset: consulting-step; text-align: left; }
