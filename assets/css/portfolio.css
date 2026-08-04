@@ -8,6 +8,8 @@
 #intro p.intro-role { font-size: 1.4rem; line-height: 1.35; }
 #intro p.intro-role strong,#intro p.intro-role span,#intro .intro-link-row { display: block; }
 #intro p.intro-role strong { font-size: 1.18em; font-weight: 700; }
+#intro p.intro-role a { color: inherit; text-decoration-color: rgba(255,255,255,.7); text-underline-offset: .18em; }
+#intro p.intro-role a:hover,#intro p.intro-role a:focus { color: #fff; text-decoration-color: #fff; }
 #intro p.intro-links { font-size: 1.4rem; line-height: 2; }
 #intro .intro-link-row a + a { margin-left: var(--space-md); }
 #intro .intro-actions { align-items: center; }
