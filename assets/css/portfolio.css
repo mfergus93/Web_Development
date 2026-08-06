@@ -26,6 +26,7 @@
 .page-tabs a:focus-visible { position: relative; z-index: 1; outline: 3px solid #18bfef; outline-offset: -3px; }
 .page-tabs a[aria-current="page"] { background: #212931; color: #fff; }
 .page-tabs-standalone { margin-bottom: var(--space-lg); border: 2px solid #d8d1c7; }
+.page-tabs-compact { margin-bottom: var(--space-sm); }
 .photo-panel { padding: var(--space-lg); background: #fffaf2; border: 2px solid #d8d1c7; }
 
 .portfolio-section { margin: 0; }
