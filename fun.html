@@ -7,30 +7,30 @@
 		<meta name="description" content="Small interactive experiments by Matt Ferguson, including the fictional Launch a Missile map game." />
 		<meta name="theme-color" content="#101820" />
 		<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
-		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/spacing.css?v=20260802-1" />
-		<link rel="stylesheet" href="assets/css/portfolio.css?v=20260805-4" />
-		<link rel="stylesheet" href="assets/css/fun.css?v=20260802-1" />
+		<link rel="stylesheet" href="assets/css/portfolio.css?v=20260805-6" />
+		<link rel="stylesheet" href="assets/css/fun.css?v=20260805-4" />
 	</head>
 	<body>
 		<a class="skip-link" href="#game">Skip to game</a>
 
 		<main id="game" class="game-shell">
+			<h1 class="visually-hidden">Just for Fun</h1>
 			<nav class="page-tabs page-tabs-standalone page-tabs-compact" aria-label="Site sections">
 				<a href="index.html#main" data-tab="professional">Professional</a>
-				<a href="fun.html" data-tab="fun" aria-current="page">Just for Fun</a>
 				<a href="photography.html" data-tab="photography">Photography</a>
+				<a href="fun.html" data-tab="fun" aria-current="page">Just for Fun</a>
 			</nav>
 
-			<details class="fun-item astronaut-game">
+			<details class="section-card fun-item astronaut-game">
 				<summary>Astronaut Dressup</summary>
 				<div class="puzzle-frame">
-					<iframe src="games/dress-astronaut/index.html?v=20260802-18" title="Astronaut Dressup game" loading="lazy"></iframe>
+					<iframe src="games/dress-astronaut/index.html?v=20260805-19" title="Astronaut Dressup game" loading="lazy"></iframe>
 				</div>
 			</details>
 
-			<details class="fun-item missile-game" hidden>
+			<details class="section-card fun-item missile-game" hidden>
 				<summary>Launch a Missile</summary>
 				<section class="game-card" aria-label="Launch a Missile game">
 					<div id="location-prompt" class="location-prompt">
@@ -45,24 +45,33 @@
 				</section>
 			</details>
 
-			<details class="fun-item galaxies-game">
+			<details class="section-card fun-item galaxies-game">
 				<summary>Galaxies</summary>
 				<div class="puzzle-frame">
 					<iframe src="games/galaxies/index.html?v=20260802-2" title="Galaxies puzzle" loading="lazy"></iframe>
 				</div>
 			</details>
 
-			<details class="fun-item map-game">
+			<details class="section-card fun-item map-game">
 				<summary>Map</summary>
 				<div class="puzzle-frame">
 					<iframe src="games/map/index.html?v=20260802-2" title="Map puzzle" loading="lazy"></iframe>
 				</div>
 			</details>
 
+			<details class="section-card fun-item rubber-chickens-video">
+				<summary>Rubber Chickens</summary>
+				<div class="video-frame">
+					<iframe src="https://www.youtube.com/embed/nHc288IPFzk?feature=oembed" title="Duck Army rubber chickens video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				</div>
+			</details>
+
+			<div class="section-card fun-item">
+				<a href="https://mattspoems.com" target="_blank" rel="noopener" class="matspoems-direct-link">Matt's Poems</a>
+			</div>
+
 			<p class="puzzle-license"><a href="games/galaxies/LICENSE.txt">MIT License</a></p>
 		</main>
 
-		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
-		<script src="assets/js/fun.js?v=20260801-2"></script>
 	</body>
 </html>

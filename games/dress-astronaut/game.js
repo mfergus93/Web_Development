@@ -18,6 +18,25 @@ const labels = {
 	}
 };
 const state = { ...defaults };
+const DUNCE_RANDOM_LIMIT = 3;
+const DUNCE_RANDOM_COUNT_KEY = "astronautDressup.dunceRandomCount";
+
+function getDunceRandomCount() {
+	try {
+		const stored = Number.parseInt(window.localStorage.getItem(DUNCE_RANDOM_COUNT_KEY), 10);
+		return Number.isFinite(stored) ? Math.min(Math.max(stored, 0), DUNCE_RANDOM_LIMIT) : 0;
+	} catch (error) {
+		return 0;
+	}
+}
+
+function recordDunceRandomClick(count) {
+	try {
+		window.localStorage.setItem(DUNCE_RANDOM_COUNT_KEY, String(count));
+	} catch (error) {
+		// Randomization still works when browser storage is unavailable.
+	}
+}
 
 const astronaut = document.querySelector("#astronaut");
 const backgroundLayer = document.querySelector("#background-layer");
@@ -176,8 +195,8 @@ function drawFaceAccessory() {
 	} else if (state.faceAccessory === "clown") {
 		add(faceAccessoryLayer, "circle", { cx: 210, cy: 149, r: 11, fill: "#df3e48", stroke: "#8d2028", "stroke-width": 2 });
 	} else if (state.faceAccessory === "eyepatch") {
-		add(faceAccessoryLayer, "path", { d: "M158 119 Q210 101 262 119", fill: "none", stroke: "#222", "stroke-width": 4 });
-		add(faceAccessoryLayer, "path", { d: "M211 128 Q226 119 241 128 L237 148 Q225 157 213 148Z", fill: "#222", stroke: "#111", "stroke-width": 2 });
+		add(faceAccessoryLayer, "path", { d: "M165 115 L252 153", fill: "none", stroke: "#222", "stroke-width": 3.5 });
+		add(faceAccessoryLayer, "path", { d: "M213 131 Q227 122 241 131 L238 147 Q227 155 216 147Z", fill: "#222", stroke: "#111", "stroke-width": 2 });
 	} else if (state.faceAccessory === "monocle") {
 		add(faceAccessoryLayer, "circle", { cx: 231, cy: 137, r: 18, fill: "none", stroke: "#b7903c", "stroke-width": 4 });
 		add(faceAccessoryLayer, "path", { d: "M245 149 Q258 175 250 203", fill: "none", stroke: "#b7903c", "stroke-width": 3, "stroke-linecap": "round" });
@@ -456,10 +475,15 @@ document.querySelectorAll("#gamemenu [data-category] button[data-value]").forEac
 });
 
 document.querySelector("#randomize").addEventListener("click", () => {
+	const dunceRandomCount = getDunceRandomCount();
 	document.querySelectorAll("#gamemenu [data-category]").forEach((menu) => {
 		const choices = [...menu.querySelectorAll("button[data-value]")];
 		state[menu.dataset.category] = choices[Math.floor(Math.random() * choices.length)].dataset.value;
 	});
+	if (dunceRandomCount < DUNCE_RANDOM_LIMIT) {
+		state.helmet = "dunce";
+		recordDunceRandomClick(dunceRandomCount + 1);
+	}
 	render();
 	closeMenus();
 });
