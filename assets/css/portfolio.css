@@ -26,6 +26,7 @@
 .page-tabs a:focus-visible { position: relative; z-index: 1; outline: 3px solid #18bfef; outline-offset: -3px; }
 .page-tabs a[aria-current="page"] { background: #212931; color: #fff; }
 .page-tabs-standalone { margin-bottom: var(--space-lg); border: 2px solid #d8d1c7; }
+.photo-panel { padding: var(--space-lg); background: #fffaf2; border: 2px solid #d8d1c7; }
 
 .portfolio-section { margin: 0; }
 .portfolio-section > summary { display: block; padding: var(--space-md); border: 2px solid rgba(0,0,0,.15); border-radius: 4px; cursor: pointer; font-family: "Source Sans Pro",Helvetica,sans-serif; font-size: clamp(.9rem,calc(1.2vw + .35rem),1.55rem); font-weight: 900; letter-spacing: .05em; line-height: 1.2; list-style: none; text-align: center; text-transform: uppercase; transition: background-color .2s ease,border-color .2s ease; }
@@ -130,12 +131,14 @@ html { font-size: 10pt; }
 	.consulting-services,.consulting-engagements ol { grid-template-columns: 1fr; }
 	.consulting-services h2 { min-height: 0; }
 	.consulting-services article > p:not(.consulting-card-proof) { min-height: 0; }
+	.photo-panel { padding: var(--space-md); }
 }
 
 @media screen and (max-width: 480px) {
   .toy-grid { grid-template-columns: 1fr; }
   .album-grid { grid-template-columns: 1fr; }
   .page-tabs a { min-height: 3rem; padding: var(--space-xs); font-size: .68rem; letter-spacing: .04em; }
+  .photo-panel { padding: var(--space-sm); border-right: 0; border-left: 0; }
 }
 
 @media screen and (max-width: 360px) {
