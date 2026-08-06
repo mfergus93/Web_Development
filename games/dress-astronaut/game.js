@@ -18,6 +18,25 @@ const labels = {
 	}
 };
 const state = { ...defaults };
+const DUNCE_RANDOM_LIMIT = 3;
+const DUNCE_RANDOM_COUNT_KEY = "astronautDressup.dunceRandomCount";
+
+function getDunceRandomCount() {
+	try {
+		const stored = Number.parseInt(window.localStorage.getItem(DUNCE_RANDOM_COUNT_KEY), 10);
+		return Number.isFinite(stored) ? Math.min(Math.max(stored, 0), DUNCE_RANDOM_LIMIT) : 0;
+	} catch (error) {
+		return 0;
+	}
+}
+
+function recordDunceRandomClick(count) {
+	try {
+		window.localStorage.setItem(DUNCE_RANDOM_COUNT_KEY, String(count));
+	} catch (error) {
+		// Randomization still works when browser storage is unavailable.
+	}
+}
 
 const astronaut = document.querySelector("#astronaut");
 const backgroundLayer = document.querySelector("#background-layer");
@@ -456,10 +475,15 @@ document.querySelectorAll("#gamemenu [data-category] button[data-value]").forEac
 });
 
 document.querySelector("#randomize").addEventListener("click", () => {
+	const dunceRandomCount = getDunceRandomCount();
 	document.querySelectorAll("#gamemenu [data-category]").forEach((menu) => {
 		const choices = [...menu.querySelectorAll("button[data-value]")];
 		state[menu.dataset.category] = choices[Math.floor(Math.random() * choices.length)].dataset.value;
 	});
+	if (dunceRandomCount < DUNCE_RANDOM_LIMIT) {
+		state.helmet = "dunce";
+		recordDunceRandomClick(dunceRandomCount + 1);
+	}
 	render();
 	closeMenus();
 });

@@ -1,5 +1,30 @@
 // Portfolio-specific layout.
 
+.visually-hidden {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	margin: -1px !important;
+	padding: 0 !important;
+	overflow: hidden !important;
+	clip: rect(0 0 0 0) !important;
+	clip-path: inset(50%) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
+
+html { background: #212931; }
+body {
+	min-width: 320px;
+	min-height: 100vh;
+	background-color: #212931;
+	background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");
+	background-position: center, center, center;
+	background-repeat: repeat, no-repeat, no-repeat;
+	background-size: auto, auto, cover;
+	background-attachment: fixed, fixed, fixed;
+}
+
 .skip-link {
 	position: fixed;
 	top: 1rem;
@@ -40,15 +65,20 @@
 	width: 75%;
 	max-width: 67rem;
 	margin-bottom: 3rem;
-	background: #fffaf2;
-	border: 2px solid #d8d1c7;
+	background: transparent;
+	border: 0;
 	box-sizing: border-box;
 }
 
-#main > * { padding: 2rem; border-color: #d8d1c7; border-top-width: 2px; }
+#main > * { padding: 2rem; }
 
-.portfolio-section { margin: 0; }
-.portfolio-section > summary {
+.section-card {
+	padding: 2rem;
+	background: #fffaf2;
+	border: 2px solid #d8d1c7;
+}
+#main > .portfolio-section { margin: 0 0 1rem; }
+.section-card > summary {
 	display: block;
 	padding: 1.25rem 1.5rem;
 	border: 2px solid rgba(0, 0, 0, 0.15);
@@ -64,14 +94,14 @@
 	text-transform: uppercase;
 	transition: background-color 0.2s ease, border-color 0.2s ease;
 }
-.portfolio-section > summary::-webkit-details-marker { display: none; }
-.portfolio-section > summary::after { content: " +"; opacity: 0.6; }
-.portfolio-section[open] > summary { margin-bottom: 2rem; }
-.portfolio-section[open] > summary::after { content: " \2013"; }
-.portfolio-section > summary:hover,
-.portfolio-section > summary:focus-visible { background: rgba(0, 0, 0, 0.04); border-color: rgba(0, 0, 0, 0.45); }
-.portfolio-section > summary:focus-visible,
-.portfolio-section a:focus-visible { outline: 3px solid #18bfef; outline-offset: 3px; }
+.section-card > summary::-webkit-details-marker { display: none; }
+.section-card > summary::after { content: " +"; opacity: 0.6; }
+.section-card[open] > summary { margin-bottom: 2rem; }
+.section-card[open] > summary::after { content: " \2013"; }
+.section-card > summary:hover,
+.section-card > summary:focus-visible { background: rgba(0, 0, 0, 0.04); border-color: rgba(0, 0, 0, 0.45); }
+.section-card > summary:focus-visible,
+.section-card a:focus-visible { outline: 3px solid #18bfef; outline-offset: 3px; }
 .featured-project > summary { white-space: nowrap; }
 
 .featured-project > .post { padding: 0 0 0.75rem; text-align: center; }
@@ -122,7 +152,8 @@ html { font-size: 10pt; }
 	#intro p.intro-links { font-size: 1.3rem; }
 	#intro .intro-link-row a + a { margin-left: 0.85rem; }
 	#main > * { padding: 1.5rem; }
-	.portfolio-section > summary { padding-right: 0.75rem; padding-left: 0.75rem; }
+	.section-card { padding: 1.5rem; }
+	.section-card > summary { padding-right: 0.75rem; padding-left: 0.75rem; }
 	.vision-projects > .posts { grid-template-columns: 1fr; }
 	.vision-projects > .posts > article { border-left-width: 0; }
 	.vision-projects > .posts > article:nth-child(n + 2) { border-top-width: 2px; }
@@ -131,6 +162,7 @@ html { font-size: 10pt; }
 
 @media screen and (max-width: 480px) {
 	.toy-grid { grid-template-columns: 1fr; }
+	.section-card { border-right: 0; border-left: 0; }
 }
 
 @media screen and (max-width: 360px) {
