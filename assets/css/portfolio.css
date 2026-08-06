@@ -18,6 +18,15 @@
 #main { width: 75%; max-width: 67rem; margin-bottom: var(--space-xl); background: #fffaf2; border: 2px solid #d8d1c7; box-sizing: border-box; }
 #main > * { padding: var(--space-lg); border-color: #d8d1c7; border-top-width: 2px; }
 
+.page-tabs { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); width: 100%; background: #fffaf2; border-bottom: 2px solid #d8d1c7; box-sizing: border-box; font-family: "Source Sans Pro",Helvetica,sans-serif; }
+#main > .page-tabs { padding: 0; border-top: 0; }
+.page-tabs a { display: grid; min-width: 0; min-height: 3.5rem; padding: var(--space-sm); place-items: center; border: 0; border-left: 1px solid #d8d1c7; color: #4a5057; font-size: .8rem; font-weight: 900; letter-spacing: .075em; line-height: 1.2; text-align: center; text-decoration: none; text-transform: uppercase; transition: background-color .2s ease,color .2s ease; }
+.page-tabs a:first-child { border-left: 0; }
+.page-tabs a:hover,.page-tabs a:focus-visible { background: rgba(0,0,0,.05); color: #212931; }
+.page-tabs a:focus-visible { position: relative; z-index: 1; outline: 3px solid #18bfef; outline-offset: -3px; }
+.page-tabs a[aria-current="page"] { background: #212931; color: #fff; }
+.page-tabs-standalone { margin-bottom: var(--space-lg); border: 2px solid #d8d1c7; }
+
 .portfolio-section { margin: 0; }
 .portfolio-section > summary { display: block; padding: var(--space-md); border: 2px solid rgba(0,0,0,.15); border-radius: 4px; cursor: pointer; font-family: "Source Sans Pro",Helvetica,sans-serif; font-size: clamp(.9rem,calc(1.2vw + .35rem),1.55rem); font-weight: 900; letter-spacing: .05em; line-height: 1.2; list-style: none; text-align: center; text-transform: uppercase; transition: background-color .2s ease,border-color .2s ease; }
 .portfolio-section > summary::-webkit-details-marker { display: none; }
@@ -126,6 +135,7 @@ html { font-size: 10pt; }
 @media screen and (max-width: 480px) {
   .toy-grid { grid-template-columns: 1fr; }
   .album-grid { grid-template-columns: 1fr; }
+  .page-tabs a { min-height: 3rem; padding: var(--space-xs); font-size: .68rem; letter-spacing: .04em; }
 }
 
 @media screen and (max-width: 360px) {
