@@ -84,6 +84,15 @@
 .toy-grid a.toy .label { padding: var(--space-sm) var(--space-sm) var(--space-optical); color: #212931; font-family: "Source Sans Pro",Helvetica,sans-serif; font-size: .75rem; font-weight: 700; letter-spacing: .04em; line-height: 1.35; text-align: center; text-transform: uppercase; }
 .toy-grid a.toy .desc { margin: 0; padding: 0 var(--space-sm) var(--space-sm); color: #4a5057; font-size: .7rem; line-height: 1.45; text-align: center; }
 
+.album-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: var(--space-md); }
+.album-card { min-width: 0; margin: 0; padding: 0; overflow: visible; background: rgba(255,255,255,.35); border: 1px solid #c6beb3; border-radius: 4px; }
+.album-cover { position: relative; display: grid; aspect-ratio: 4 / 3; margin: var(--space-xs); place-items: center; background: linear-gradient(145deg,#e9e3da,#d8d1c7); border: 1px solid #bdb5aa; box-shadow: 4px 4px 0 #fffaf2,6px 6px 0 #c6beb3; color: #656b72; font-family: "Source Sans Pro",Helvetica,sans-serif; font-size: .72rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.album-cover::before { content: ""; width: 2.4rem; height: 1.7rem; border: 2px solid currentColor; border-radius: 2px; background: linear-gradient(145deg,transparent 49%,currentColor 50%,currentColor 54%,transparent 55%); opacity: .65; }
+.album-cover span { position: absolute; right: 0; bottom: var(--space-xs); left: 0; text-align: center; }
+.album-meta { padding: var(--space-sm); text-align: left; }
+.album-meta h2 { margin: 0 0 .2rem; font-size: .8rem; line-height: 1.3; }
+.album-meta p { margin: 0; color: #656b72; font-size: .7rem; line-height: 1.4; }
+
 html { font-size: 10pt; }
 
 @media screen and (max-width: 1280px) {
@@ -95,6 +104,7 @@ html { font-size: 10pt; }
   .vision-projects > .posts > article { padding: var(--space-md); }
   .consulting-services { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .toy-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .album-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
 
 @media screen and (max-width: 736px) {
@@ -115,6 +125,7 @@ html { font-size: 10pt; }
 
 @media screen and (max-width: 480px) {
   .toy-grid { grid-template-columns: 1fr; }
+  .album-grid { grid-template-columns: 1fr; }
 }
 
 @media screen and (max-width: 360px) {
