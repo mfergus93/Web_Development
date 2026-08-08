@@ -18,5 +18,5 @@ if ($IpAddress) {
     $query += "&ip=$([uri]::EscapeDataString($IpAddress))"
 }
 
-$headers = @{ Authorization = "Bearer $token" }
-Invoke-RestMethod -Uri "https://matferg.com/_visitor-logs?$query" -Headers $headers
+$response = Invoke-RestMethod -Uri "https://matferg.com/_visitor-logs?$query" -Headers $headers
+$response.visits | Format-Table -Property visited_at, ip_address, city, region, postal_code, country, path, user_agent -AutoSize
